@@ -1,57 +1,57 @@
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-    <soapenv:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
-        <wsa:To>http://ca-test-zf-cne-01.pnet.ch:8081/wsproxy/services/SpidQueryService2/</wsa:To>
-        <wsa:MessageID>urn:uuid:dc2d00ae-2dcf-4cc5-b7f2-e9e98e805761</wsa:MessageID>
-        <wsa:Action>http://www.zas.admin.ch</wsa:Action>
-        <sense:context xmlns:sense="http://sense.ith-icoserve.com/context/"
-                       xmlns:wsctx="http://docs.oasis-open.org/ws-caf/2005/10/wsctx">
-            <wsctx:context-identifier>urn:uuid:268ec243-0916-469f-aef0-499762048b41</wsctx:context-identifier>
-            <wsctx:context-service>
-                <sense:service>UPIProxy</sense:service>
-            </wsctx:context-service>
-        </sense:context>
-    </soapenv:Header>
-    <soapenv:Body>
-        <ns10:request xmlns:ns10="http://www.ech.ch/xmlns/eCH-0214/2"
-                      xmlns:ns13="http://www.ech.ch/xmlns/eCH-0006/2"
-                      xmlns:ns12="http://www.ech.ch/xmlns/eCH-0213/1"
-                      xmlns:ns11="http://www.ech.ch/xmlns/eCH-0215/2"
-                      xmlns:ns9="http://www.ech.ch/xmlns/eCH-0021/7"
-                      xmlns:ns8="http://www.ech.ch/xmlns/eCH-0135/1"
-                      xmlns:ns7="http://www.ech.ch/xmlns/eCH-0213-commons/1"
-                      xmlns:ns6="http://www.ech.ch/xmlns/eCH-0058/5"
-                      xmlns:ns5="http://www.ech.ch/xmlns/eCH-0010/5"
-                      xmlns:ns4="http://www.ech.ch/xmlns/eCH-0008/3"
-                      xmlns:ns3="http://www.ech.ch/xmlns/eCH-0007/5"
-                      xmlns:ns2="http://www.ech.ch/xmlns/eCH-0011/8"
-                      xmlns="http://www.ech.ch/xmlns/eCH-0044/4"
-                      minorVersion="0">
-            <ns10:header>
-                <ns6:senderId>sedex://T4-755079-3</ns6:senderId>
-                <ns6:recipientId>sedex://T3-CH-24</ns6:recipientId>
-                <ns6:messageId>3fa45e307b7c4b2fa6180c21d21c7dcf</ns6:messageId>
-                <ns6:messageType>1021</ns6:messageType>
-                <ns6:sendingApplication>
-                    <ns6:manufacturer>ITH icoserve</ns6:manufacturer>
-                    <ns6:product>eHealth Solutions</ns6:product>
-                    <ns6:productVersion>VA37</ns6:productVersion>
-                </ns6:sendingApplication>
-                <ns6:messageDate>2019-12-31T08:22:39.411+01:00</ns6:messageDate>
-                <ns6:action>5</ns6:action>
-                <ns6:testDeliveryFlag>true</ns6:testDeliveryFlag>
-                <ns6:responseExpected>true</ns6:responseExpected>
-            </ns10:header>
-            <ns10:content>
-                <ns10:SPIDCategory>EPD-ID.BAG.ADMIN.CH</ns10:SPIDCategory>
-                <ns10:responseLanguage>EN</ns10:responseLanguage>
-                <ns10:getInfoPersonRequest>
-                    <ns10:getInfoPersonRequestId>1</ns10:getInfoPersonRequestId>
-                    <ns10:detailLevelOfResponse>standard</ns10:detailLevelOfResponse>
-                    <ns10:pid>
-                        <ns10:vn>7560520075337</ns10:vn>
-                    </ns10:pid>
-                </ns10:getInfoPersonRequest>
-            </ns10:content>
-        </ns10:request>
-    </soapenv:Body>
+ <soapenv:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <wsa:To>http://ca-test-zf-cne-01.pnet.ch:8081/wsproxy/services/SpidQueryService2/</wsa:To>
+  <wsa:MessageID>urn:uuid:dc2d00ae-2dcf-4cc5-b7f2-e9e98e805761</wsa:MessageID>
+  <wsa:Action>http://www.zas.admin.ch</wsa:Action>
+  <sense:context xmlns:sense="http://sense.ith-icoserve.com/context/" xmlns:wsctx="http://docs.oasis-open.org/ws-caf/2005/10/wsctx">
+   <wsctx:context-identifier>urn:uuid:268ec243-0916-469f-aef0-499762048b41</wsctx:context-identifier>
+   <wsctx:context-service>
+    <sense:service>UPIProxy</sense:service>
+   </wsctx:context-service>
+  </sense:context>
+ </soapenv:Header>
+ <soapenv:Body>
+  <ns10:request
+   xmlns:ns10="http://www.ech.ch/xmlns/eCH-0214/2"
+   xmlns:ns13="http://www.ech.ch/xmlns/eCH-0006/2"
+   xmlns:ns12="http://www.ech.ch/xmlns/eCH-0213/1"
+   xmlns:ns11="http://www.ech.ch/xmlns/eCH-0215/2"
+   xmlns:ns9="http://www.ech.ch/xmlns/eCH-0021/7"
+   xmlns:ns8="http://www.ech.ch/xmlns/eCH-0135/1"
+   xmlns:ns7="http://www.ech.ch/xmlns/eCH-0213-commons/1"
+   xmlns:ns6="http://www.ech.ch/xmlns/eCH-0058/5"
+   xmlns:ns5="http://www.ech.ch/xmlns/eCH-0010/5"
+   xmlns:ns4="http://www.ech.ch/xmlns/eCH-0008/3"
+   xmlns:ns3="http://www.ech.ch/xmlns/eCH-0007/5"
+   xmlns:ns2="http://www.ech.ch/xmlns/eCH-0011/8"
+   xmlns="http://www.ech.ch/xmlns/eCH-0044/4"
+   minorVersion="0">
+   <ns10:header>
+    <ns6:senderId>sedex://T4-755079-3</ns6:senderId>
+    <ns6:recipientId>sedex://T3-CH-24</ns6:recipientId>
+    <ns6:messageId>3fa45e307b7c4b2fa6180c21d21c7dcf</ns6:messageId>
+    <ns6:messageType>1021</ns6:messageType>
+    <ns6:sendingApplication>
+     <ns6:manufacturer>ITH icoserve</ns6:manufacturer>
+     <ns6:product>eHealth Solutions</ns6:product>
+     <ns6:productVersion>VA37</ns6:productVersion>
+    </ns6:sendingApplication>
+    <ns6:messageDate>2019-12-31T08:22:39.411+01:00</ns6:messageDate>
+    <ns6:action>5</ns6:action>
+    <ns6:testDeliveryFlag>true</ns6:testDeliveryFlag>
+    <ns6:responseExpected>true</ns6:responseExpected>
+   </ns10:header>
+   <ns10:content>
+    <ns10:SPIDCategory>EPD-ID.BAG.ADMIN.CH</ns10:SPIDCategory>
+    <ns10:responseLanguage>EN</ns10:responseLanguage>
+    <ns10:getInfoPersonRequest>
+     <ns10:getInfoPersonRequestId>1</ns10:getInfoPersonRequestId>
+     <ns10:detailLevelOfResponse>standard</ns10:detailLevelOfResponse>
+     <ns10:pid>
+      <ns10:vn>7560520075337</ns10:vn>
+     </ns10:pid>
+    </ns10:getInfoPersonRequest>
+   </ns10:content>
+  </ns10:request>
+ </soapenv:Body>
 </soapenv:Envelope>
