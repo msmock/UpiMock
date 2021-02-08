@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://www.zas.admin.ch/wupispid/ws/managementService/1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:eCH-0213="http://www.ech.ch/xmlns/eCH-0213/1" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:upi-ws="http://www.zas.admin.ch/wupispid/ws/managementService/1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<documentation>
+    This WSDL definition describes the Management UPI/SPID Web Service interface.
+
+    Change history:
+    2017-01-03 - Creation (TQN, ELCA)
+  </documentation>
+  <types>
+    <xs:schema elementFormDefault="qualified">
+      <xs:import namespace="http://www.ech.ch/xmlns/eCH-0213/1" schemaLocation="http://www.ech.ch/xmlns/eCH-0213/1/eCH-0213-1-0.xsd"/>
+    </xs:schema>
+  </types>
+  <message name="responseMsg">
+    <part name="body" element="eCH-0213:response">
+    </part>
+  </message>
+  <message name="requestMsg">
+    <part name="body" element="eCH-0213:request">
+    </part>
+  </message>
+  <portType name="SpidManagementServicePortTypeV1">
+    <operation name="manageSpid">
+      <input message="upi-ws:requestMsg">
+    </input>
+      <output message="upi-ws:responseMsg">
+    </output>
+    </operation>
+  </portType>
+  <binding name="SpidManagementServiceBindingV1" type="upi-ws:SpidManagementServicePortTypeV1">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="manageSpid">
+      <soap:operation soapAction="http://www.zas.admin.ch"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SpidManagementService">
+    <port name="SpidManagementServicePortV1" binding="upi-ws:SpidManagementServiceBindingV1">
+      <soap:address location="http://172.19.145.129:8081/wsproxy/services/SpidManagementService/"/>
+    </port>
+  </service>
+</definitions>
