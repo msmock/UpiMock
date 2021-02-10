@@ -1,6 +1,7 @@
 package com.smalljetty.model;
 
 public class UpiPerson {
+
     public String vn;
     public String firstName;
     public String officialName;
@@ -20,6 +21,21 @@ public class UpiPerson {
         this.countryId = countryId;
         this.countryIdISO2 = countryIdISO2;
         this.countryNameShort = countryNameShort;
-        this.spid=spid;
+        this.spid = spid;
+    }
+
+    @Override
+    public String toString() {
+        return "UpiPerson{" +
+                "vn='" + vn + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", officialName='" + officialName + '\'' +
+                ", sex='" + sex + '\'' +
+                ", yearMonthDay='" + yearMonthDay + '\'' +
+                ", countryId='" + countryId + '\'' +
+                ", countryIdISO2='" + countryIdISO2 + '\'' +
+                ", countryNameShort='" + countryNameShort + '\'' +
+                ", spid='" + spid + '\'' +
+                '}';
     }
 }
