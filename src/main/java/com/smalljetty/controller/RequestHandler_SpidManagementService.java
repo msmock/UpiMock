@@ -1,8 +1,8 @@
 package com.smalljetty.controller;
 
 import ch.ech.xmlns.ech_0213._1.Request;
-import ch.ech.xmlns.ech_0213_commons._1.PersonFromUPIType;
 import ch.ech.xmlns.ech_0213_commons._1.PidsFromUPIType;
+import com.smalljetty.model.Config;
 import com.smalljetty.model.UpiPerson;
 import org.w3c.dom.Document;
 
@@ -33,9 +33,6 @@ import java.util.UUID;
 @Path("services/SpidManagementService/")
 public class RequestHandler_SpidManagementService {
 
-    //String envPefix="src/main/java/"; //for dev.
-    String envPefix = "classes/"; //for maven build
-
     @POST
     @Consumes(MediaType.TEXT_XML)
     @Produces(MediaType.TEXT_XML)
@@ -43,37 +40,30 @@ public class RequestHandler_SpidManagementService {
 
         String requestId = fullRequest.substring(fullRequest.indexOf("MessageID>") + 10);
         requestId = requestId.substring(0, requestId.indexOf("<"));
+
         String requestInfo = fullRequest.substring(fullRequest.indexOf(":request") - 5, fullRequest.indexOf(":request>") + 9);
 
         JAXBContext jaxbContext = JAXBContext.newInstance(Request.class);
         Unmarshaller um = jaxbContext.createUnmarshaller();
 
         Request request = (Request) um.unmarshal(new StringReader(requestInfo));
-
-        if (request.getContent().getActionOnSPID() != null) {
-            System.out.println("TYPE2");
-        } else {
-            System.out.println("Type1");
-        }
-
-        String response = getResponseOfRequest2(request, requestId);
+        String response = getResponse(request, requestId);
 
         //return generated response with sedex headers
         return Response.ok(response).header("Content-Type", "text/xml; charset=UTF-8").header("Connection", "Keep-Alive").build();
     }
 
-    private String getResponseOfRequest2(Request request, String requestMessageId) throws Exception {
+    private String getResponse(Request request, String requestMessageId) throws Exception {
 
         //Create Response Object from XML File
         StringBuilder sb = new StringBuilder();
-        Files.lines(Paths.get(envPefix + "com/smalljetty/app/SpidManagementService_Response1.xml"), StandardCharsets.UTF_8).forEach(line -> sb.append(line + System.getProperty("line.separator")));
+        Files.lines(Paths.get(Config.envPefix + "com/smalljetty/app/SpidMgmt_response-1.xml"), StandardCharsets.UTF_8).forEach(line -> sb.append(line + System.getProperty("line.separator")));
         String responseStr = sb.toString();
 
         String responseHead = responseStr.substring(0, responseStr.indexOf(":response") - 5);
         responseHead = responseHead.replaceFirst("urn:uuid:a6cfdc10-ce29-4d06-9f51-35835a4a0b4d", requestMessageId);
 
         String responseContent = responseStr.substring(responseStr.indexOf(":response") - 5, responseStr.indexOf(":response>") + 10);
-
         String responseFooter = responseStr.substring(responseStr.indexOf(":response>") + 10);
 
         JAXBContext jaxbContext = JAXBContext.newInstance(ch.ech.xmlns.ech_0213._1.Response.class);
@@ -85,6 +75,7 @@ public class RequestHandler_SpidManagementService {
         UpiPerson upiPerson = getUpiPerson(vnNumber);
 
         response.getHeader().setSenderId(request.getHeader().getSenderId());
+
         PidsFromUPIType pids = new PidsFromUPIType();
         pids.setVn(Long.getLong(vnNumber));
         pids.getSPID().clear();
@@ -103,7 +94,7 @@ public class RequestHandler_SpidManagementService {
         response.getPositiveResponse().getPersonFromUPI().getNationalityData().getCountryInfo().get(0).getCountry().setCountryIdISO2(upiPerson.countryIdISO2);
         response.getPositiveResponse().getPersonFromUPI().getNationalityData().getCountryInfo().get(0).getCountry().setCountryNameShort(upiPerson.countryNameShort);
 
-        //Marshal Object back to String
+        //convert to string
         StringWriter sw = new StringWriter();
         Marshaller m = jaxbContext.createMarshaller();
         m.setProperty("jaxb.fragment", Boolean.TRUE);
@@ -119,7 +110,7 @@ public class RequestHandler_SpidManagementService {
 
     private UpiPerson getUpiPerson(String vn) throws Exception {
 
-        Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(envPefix + "com/smalljetty/upiPersons/" + vn + ".xml");
+        Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(Config.envPefix + "com/smalljetty/upiPersons/" + vn + ".xml");
         XPath xPath = XPathFactory.newInstance().newXPath();
 
         String firstName = xPath.evaluate("/upiPerson/firstName", document);
@@ -131,11 +122,8 @@ public class RequestHandler_SpidManagementService {
         String countryNameShort = xPath.evaluate("/upiPerson/countryNameShort", document);
         String spid = xPath.evaluate("/upiPerson/SPID", document);
 
-        PersonFromUPIType person = new PersonFromUPIType();
-        UpiPerson upiPerson = new UpiPerson(vn, firstName, officialName, sex, yearMonthDay, countryId,
+        return new UpiPerson(vn, firstName, officialName, sex, yearMonthDay, countryId,
                 countryIdISO2, countryNameShort, spid);
-
-        return upiPerson;
     }
 
 }

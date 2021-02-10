@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "content")
 public class RequestInfo {
+
     private RequestType requestType;
     private String senderId;
     private String vn;

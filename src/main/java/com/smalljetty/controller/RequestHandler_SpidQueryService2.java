@@ -1,5 +1,6 @@
 package com.smalljetty.controller;
 
+import com.smalljetty.model.Config;
 import com.smalljetty.model.RequestInfo;
 import com.smalljetty.model.RequestType;
 import com.smalljetty.model.UpiPerson;
@@ -30,9 +31,6 @@ import java.util.UUID;
 
 @Path("services/SpidQueryService2/")
 public class RequestHandler_SpidQueryService2 {
-
-    private final String envPefix="target/classes/"; //for dev.
-    // private final String envPefix = "classes/"; //for maven build
 
     //todo: refactor handling request1/request2
     @POST
@@ -97,7 +95,7 @@ public class RequestHandler_SpidQueryService2 {
      */
     private String getVnFromSpid(String spid) throws Exception {
 
-        File dir = new File(envPefix + "com/smalljetty/upiPersons");
+        File dir = new File(Config.envPefix + "com/smalljetty/upiPersons");
         File[] files = dir.listFiles();
 
         if (files == null)
@@ -127,7 +125,7 @@ public class RequestHandler_SpidQueryService2 {
     private UpiPerson getUpiPerson(String vn) throws ParserConfigurationException, IOException, SAXException,
             XPathExpressionException {
 
-        String uri = envPefix + "com/smalljetty/upiPersons/" + vn + ".xml";
+        String uri = Config.envPefix + "com/smalljetty/upiPersons/" + vn + ".xml";
         Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(uri);
 
         XPath xPath = XPathFactory.newInstance().newXPath();
@@ -151,7 +149,7 @@ public class RequestHandler_SpidQueryService2 {
     private String getType1Response(RequestInfo requestInfo) throws ParserConfigurationException, IOException, SAXException, TransformerException, XPathExpressionException {
 
         DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-        Document document = db.parse(envPefix + "/com/smalljetty/app/SpidQueryService2_Response1.xml");
+        Document document = db.parse(Config.envPefix + "/com/smalljetty/app/SpidQuery_response-1.xml");
 
         //generate response string
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
@@ -189,7 +187,7 @@ public class RequestHandler_SpidQueryService2 {
     private String getType2Response(RequestInfo requestInfo) throws ParserConfigurationException, IOException, SAXException, TransformerException, XPathExpressionException {
 
         DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-        Document document = db.parse(envPefix + "com/smalljetty/app/SpidQueryService2_Response2.xml");
+        Document document = db.parse(Config.envPefix + "com/smalljetty/app/SpidQuery_response-2.xml");
 
         //generate response string
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
