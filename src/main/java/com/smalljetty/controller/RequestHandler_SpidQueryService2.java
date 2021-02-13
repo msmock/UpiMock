@@ -1,5 +1,6 @@
 package com.smalljetty.controller;
 
+import com.smalljetty.app.Main;
 import com.smalljetty.model.Config;
 import com.smalljetty.model.RequestInfo;
 import com.smalljetty.model.RequestType;
