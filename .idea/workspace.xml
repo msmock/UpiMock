@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2db2d464-52c9-40d3-89f0-d95a6b758204" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jettysample.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,17 +52,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JAR Application.UpiMock">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UpiMock" type="JarApplication">
       <option name="JAR_PATH" value="$PROJECT_DIR$/target/UpiMock.jar" />
       <option name="PROGRAM_PARAMETERS" value="9000" />
@@ -157,7 +145,7 @@
       <workItem from="1613124615224" duration="6000" />
       <workItem from="1613125697204" duration="273000" />
       <workItem from="1613126240560" duration="421000" />
-      <workItem from="1613203096477" duration="69000" />
+      <workItem from="1613203096477" duration="142000" />
     </task>
     <servers />
   </component>
