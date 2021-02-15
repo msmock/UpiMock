@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2db2d464-52c9-40d3-89f0-d95a6b758204" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/ith/QueryByAHVN_Request.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/ith/QueryByAHVN_Response.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/ith/QueryBySPID_Request.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/ith/QueryBySPID_Response.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,19 +52,18 @@
       <recent name="$PROJECT_DIR$/src/test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/ith" />
       <recent name="$PROJECT_DIR$/src/test/SpidMgmt" />
     </key>
   </component>
   <component name="RunManager" selected="JAR Application.UpiMock">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,7 +162,8 @@
       <workItem from="1613125697204" duration="273000" />
       <workItem from="1613126240560" duration="421000" />
       <workItem from="1613203096477" duration="142000" />
-      <workItem from="1613203269132" duration="877000" />
+      <workItem from="1613203269132" duration="1111000" />
+      <workItem from="1613384063981" duration="658000" />
     </task>
     <servers />
   </component>
