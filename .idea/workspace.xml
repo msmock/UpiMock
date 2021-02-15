@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2db2d464-52c9-40d3-89f0-d95a6b758204" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/ith/QueryByAHVN_Request.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/ith/QueryByAHVN_Response.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/ith/QueryBySPID_Request.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/ith/QueryBySPID_Response.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2db2d464-52c9-40d3-89f0-d95a6b758204" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
