@@ -1,6 +1,5 @@
 package com.smalljetty.controller;
 
-import com.smalljetty.app.Main;
 import com.smalljetty.model.Config;
 import com.smalljetty.model.RequestInfo;
 import com.smalljetty.model.RequestType;
@@ -150,7 +149,7 @@ public class RequestHandler_SpidQueryService2 {
     private String getType1Response(RequestInfo requestInfo) throws ParserConfigurationException, IOException, SAXException, TransformerException, XPathExpressionException {
 
         DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-        Document document = db.parse(Config.envPefix + "/com/smalljetty/app/SpidQuery_response-1.xml");
+        Document document = db.parse(Config.envPefix + "/com/smalljetty/app/SpidQuery_response-type-1.xml");
 
         //generate response string
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
@@ -171,6 +170,7 @@ public class RequestHandler_SpidQueryService2 {
         response = replaceXmlValue(response, "//Envelope/Header/RelatesTo/text()", requestInfo.getSoapMessageId());
 
         UpiPerson upiPerson = getUpiPerson(requestInfo.getVn());
+
         response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/firstName/text()", upiPerson.firstName);
         response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/officialName/text()", upiPerson.officialName);
         response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/sex/text()", upiPerson.sex);
@@ -188,7 +188,7 @@ public class RequestHandler_SpidQueryService2 {
     private String getType2Response(RequestInfo requestInfo) throws ParserConfigurationException, IOException, SAXException, TransformerException, XPathExpressionException {
 
         DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-        Document document = db.parse(Config.envPefix + "com/smalljetty/app/SpidQuery_response-2.xml");
+        Document document = db.parse(Config.envPefix + "com/smalljetty/app/SpidQuery_response-type-2.xml");
 
         //generate response string
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
