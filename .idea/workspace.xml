@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2db2d464-52c9-40d3-89f0-d95a6b758204" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/wsdl/eCH-0214-1-0.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560410438401.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/SpidQuery_response-type-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/SpidQuery_response-type-1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/SpidQuery_response-type-2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/SpidQuery_response-type-2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/model/RequestInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/model/RequestInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/ith/QueryByAHVN_Request.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ith/QueryByAHVN_Request.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/ith/QueryBySPID_Request.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ith/QueryBySPID_Request.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
@@ -46,14 +46,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/smalljetty/wsdl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/com/smalljetty/wsdl" />
       <recent name="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/smalljetty/wsdl" />
       <recent name="$PROJECT_DIR$/src/test/ith" />
       <recent name="$PROJECT_DIR$/src/test" />
     </key>
@@ -188,8 +188,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java</url>
-          <line>226</line>
-          <option name="timeStamp" value="58" />
+          <line>216</line>
+          <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,0 +1,30 @@
+<upiPerson>
+    <vn>7560410438401</vn>
+    <SPID>761337610410438402</SPID>
+
+    <!-- person data -->
+    <firstName>Martin</firstName>
+    <officialName>Smock</officialName>
+    <sex>1</sex>
+    <yearMonthDay>1963-07-25</yearMonthDay>
+
+    <!-- birth place data -->
+    <municipalityId>198</municipalityId>
+    <municipalityName>Uster</municipalityName>
+    <cantonAbbreviation>ZH</cantonAbbreviation>
+    <historyMunicipalityId>10940</historyMunicipalityId>
+
+    <!-- mothers name -->
+    <mothersFirstName>Gertrud</mothersFirstName>
+    <mothersOfficialName>Smock</mothersOfficialName>
+
+    <!-- fathers name -->
+    <fathersFirstName>Helmut</fathersFirstName>
+    <fathersOfficialName>Smock</fathersOfficialName>
+
+    <!-- nationality data -->
+    <countryId>8100</countryId>
+    <countryIdISO2>CH</countryIdISO2>
+    <countryNameShort>SWITZERLAND</countryNameShort>
+
+</upiPerson>

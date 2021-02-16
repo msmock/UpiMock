@@ -89,35 +89,6 @@ public class RequestHandler_SpidQueryService2 {
     }
 
     /**
-     * Search the UPI Persons files to resolve the SPID to the VN, if the request is with the SPID only.
-     *
-     * @param spid
-     * @return VN as String
-     */
-    private String getVnFromSpid(String spid) throws Exception {
-
-        File dir = new File(Config.envPefix + "com/smalljetty/upiPersons");
-        File[] files = dir.listFiles();
-
-        if (files == null)
-            throw new Exception("No files found in dir " + dir.getAbsolutePath());
-
-        for (File xmlFile : files) {
-
-            DocumentBuilder docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            Document document = docBuilder.parse(xmlFile.getAbsolutePath());
-
-            XPath xPath = XPathFactory.newInstance().newXPath();
-
-            String document_spid = xPath.evaluate("/upiPerson/SPID", document);
-            if (document_spid.equals(spid))
-                return xPath.evaluate("/upiPerson/vn", document);
-        }
-
-        return "should never be reached ..";
-    }
-
-    /**
      * resolve the vn to the person data and the SPID by file lookup.
      *
      * @param vn
@@ -222,7 +193,7 @@ public class RequestHandler_SpidQueryService2 {
     /**
      * REQUEST_TYPE2 if the request is with the SPID
      */
-    private String getType2Response(RequestInfo requestInfo) throws ParserConfigurationException, IOException, SAXException, TransformerException, XPathExpressionException {
+    private String getType2Response(RequestInfo requestInfo) throws Exception {
 
         DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         Document document = db.parse(Config.envPefix + "com/smalljetty/app/SpidQuery_response-type-2.xml");
@@ -236,53 +207,73 @@ public class RequestHandler_SpidQueryService2 {
 
         String response = writer.getBuffer().toString().replaceAll("\n|\r", "");
 
-        response = response.replaceAll("sedex://T4-321574-2", requestInfo.senderId);
-        response = response.replaceAll("7560520333642", requestInfo.vn);
-        response = response.replaceAll("559f64d63aee4c4ead5e501901b5729f", requestInfo.referenceMessageId);
-        response = response.replaceAll("399aeed2-6094-45db-aece-fa5256861fa8", UUID.randomUUID().toString());
+        response = response.replaceAll("\\$recipientId", requestInfo.senderId);
+        response = response.replaceAll("\\$messageId", UUID.randomUUID().toString());
+        response = response.replaceAll("\\$referenceMessageId", requestInfo.referenceMessageId);
+        response = response.replaceAll("\\$echoSpid", requestInfo.spid);
 
-        response = replaceXmlValue(response, "//Envelope/Body/response/header/messageDate/text()", OffsetDateTime.now().toString());
-        response = replaceXmlValue(response, "//Envelope/Body/response/header/messageDate/text()", requestInfo.messageDate);
-        response = replaceXmlValue(response, "//Envelope/Header/RelatesTo/text()", requestInfo.soapMessageId);
+        requestInfo.vn = getVnFromSpid(requestInfo.spid);
 
         UpiPerson upiPerson = getUpiPerson(requestInfo.vn);
 
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/firstName/text()", upiPerson.firstName);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/officialName/text()", upiPerson.officialName);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/sex/text()", upiPerson.sex);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/dateOfBirth/yearMonthDay/text()", upiPerson.birthDate);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/nationalityData/countryInfo/country/countryId/text()", upiPerson.countryId);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/nationalityData/countryInfo/country/countryIdISO2/text()", upiPerson.countryIdISO2);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/nationalityData/countryInfo/country/countryNameShort/text()", upiPerson.countryNameShort);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/pids/SPID/text()", upiPerson.spid);
+        response = response.replaceAll("\\$upiVn", upiPerson.vn);
+        response = response.replaceAll("\\$upiSpid", upiPerson.spid);
+
+        // person data
+        response = response.replaceAll("\\$firstName", upiPerson.firstName);
+        response = response.replaceAll("\\$officialName", upiPerson.officialName);
+        response = response.replaceAll("\\$sex", upiPerson.sex);
+        response = response.replaceAll("\\$dateOfBirth", upiPerson.birthDate);
+
+        // birth place data
+        response = response.replaceAll("\\$municipalityId", upiPerson.municipalityId);
+        response = response.replaceAll("\\$municipalityName", upiPerson.municipalityName);
+        response = response.replaceAll("\\$cantonAbbreviation", upiPerson.cantonAbbreviation);
+        response = response.replaceAll("\\$historyMunicipalityId", upiPerson.historyMunicipalityId);
+
+        // mothers name
+        response = response.replaceAll("\\$mothersFirstName", upiPerson.mothersFirstName);
+        response = response.replaceAll("\\$mothersOfficialName", upiPerson.mothersOfficialName);
+
+        // fathers name
+        response = response.replaceAll("\\$fathersFirstName", upiPerson.fathersFirstName);
+        response = response.replaceAll("\\$fathersOfficialName", upiPerson.fathersOfficialName);
+
+        // nationality data
+        response = response.replaceAll("\\$countryId", upiPerson.countryId);
+        response = response.replaceAll("\\$countryCode", upiPerson.countryIdISO2);
+        response = response.replaceAll("\\$countryName", upiPerson.countryNameShort);
 
         return response;
     }
 
+    /**
+     * Search the UPI Persons files to resolve the SPID to the VN, if the request is with the SPID only.
+     *
+     * @param spid
+     * @return VN as String
+     */
+    private String getVnFromSpid(String spid) throws Exception {
 
-    private String replaceXmlValue(String xmlString, String expression, String textToInsert) throws ParserConfigurationException, IOException, SAXException, XPathExpressionException, TransformerException {
+        File dir = new File(Config.envPefix + "com/smalljetty/upiPersons");
+        File[] files = dir.listFiles();
 
-        InputSource is = new InputSource();
-        is.setCharacterStream(new StringReader(xmlString));
+        if (files == null)
+            throw new Exception("No files found in dir " + dir.getAbsolutePath());
 
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        DocumentBuilder db = dbf.newDocumentBuilder();
-        Document documentOfString = db.parse(is);
+        for (File xmlFile : files) {
 
-        XPathFactory xPathFactory = XPathFactory.newInstance();
-        XPath xPath = xPathFactory.newXPath();
+            DocumentBuilder docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document document = docBuilder.parse(xmlFile.getAbsolutePath());
 
-        NodeList messageNode = (NodeList) xPath.compile(expression).evaluate(documentOfString, XPathConstants.NODESET);
-        messageNode.item(0).setNodeValue(textToInsert);
+            XPath xPath = XPathFactory.newInstance().newXPath();
 
-        Transformer transformer = TransformerFactory.newInstance().newTransformer();
-        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+            String document_spid = xPath.evaluate("/upiPerson/SPID", document);
+            if (document_spid.equals(spid))
+                return xPath.evaluate("/upiPerson/vn", document);
+        }
 
-        StringWriter writer = new StringWriter();
-        transformer.transform(new DOMSource(documentOfString), new StreamResult(writer));
-
-        return writer.getBuffer().toString();
+        throw new Exception("Could not find person with spid "+spid+ " in test data!");
     }
-
 
 }
