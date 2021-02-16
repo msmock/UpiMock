@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2db2d464-52c9-40d3-89f0-d95a6b758204" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/Soap_error.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +46,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/smalljetty/app" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/smalljetty/app" />
       <recent name="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons" />
       <recent name="$PROJECT_DIR$/src/main/java/com/smalljetty/wsdl" />
       <recent name="$PROJECT_DIR$/src/test/ith" />

@@ -152,42 +152,9 @@ public class RequestHandler_SpidQueryService2 {
 
         String response = writer.getBuffer().toString().replaceAll("\n|\r", "");
 
-        response = response.replaceAll("\\$recipientId", requestInfo.senderId);
-        response = response.replaceAll("\\$messageId", UUID.randomUUID().toString());
-        response = response.replaceAll("\\$referenceMessageId", requestInfo.referenceMessageId);
-        response = response.replaceAll("\\$echoVn", requestInfo.vn);
-
         UpiPerson upiPerson = getUpiPerson(requestInfo.vn);
 
-        response = response.replaceAll("\\$upiVn", upiPerson.vn);
-        response = response.replaceAll("\\$upiSpid", upiPerson.spid);
-
-        // person data
-        response = response.replaceAll("\\$firstName", upiPerson.firstName);
-        response = response.replaceAll("\\$officialName", upiPerson.officialName);
-        response = response.replaceAll("\\$sex", upiPerson.sex);
-        response = response.replaceAll("\\$dateOfBirth", upiPerson.birthDate);
-
-        // birth place data
-        response = response.replaceAll("\\$municipalityId", upiPerson.municipalityId);
-        response = response.replaceAll("\\$municipalityName", upiPerson.municipalityName);
-        response = response.replaceAll("\\$cantonAbbreviation", upiPerson.cantonAbbreviation);
-        response = response.replaceAll("\\$historyMunicipalityId", upiPerson.historyMunicipalityId);
-
-        // mothers name
-        response = response.replaceAll("\\$mothersFirstName", upiPerson.mothersFirstName);
-        response = response.replaceAll("\\$mothersOfficialName", upiPerson.mothersOfficialName);
-
-        // fathers name
-        response = response.replaceAll("\\$fathersFirstName", upiPerson.fathersFirstName);
-        response = response.replaceAll("\\$fathersOfficialName", upiPerson.fathersOfficialName);
-
-        // nationality data
-        response = response.replaceAll("\\$countryId", upiPerson.countryId);
-        response = response.replaceAll("\\$countryCode", upiPerson.countryIdISO2);
-        response = response.replaceAll("\\$countryName", upiPerson.countryNameShort);
-
-        return response;
+        return addResponseData(response, requestInfo, upiPerson);
     }
 
     /**
@@ -207,44 +174,10 @@ public class RequestHandler_SpidQueryService2 {
 
         String response = writer.getBuffer().toString().replaceAll("\n|\r", "");
 
-        response = response.replaceAll("\\$recipientId", requestInfo.senderId);
-        response = response.replaceAll("\\$messageId", UUID.randomUUID().toString());
-        response = response.replaceAll("\\$referenceMessageId", requestInfo.referenceMessageId);
-        response = response.replaceAll("\\$echoSpid", requestInfo.spid);
-
         requestInfo.vn = getVnFromSpid(requestInfo.spid);
-
         UpiPerson upiPerson = getUpiPerson(requestInfo.vn);
 
-        response = response.replaceAll("\\$upiVn", upiPerson.vn);
-        response = response.replaceAll("\\$upiSpid", upiPerson.spid);
-
-        // person data
-        response = response.replaceAll("\\$firstName", upiPerson.firstName);
-        response = response.replaceAll("\\$officialName", upiPerson.officialName);
-        response = response.replaceAll("\\$sex", upiPerson.sex);
-        response = response.replaceAll("\\$dateOfBirth", upiPerson.birthDate);
-
-        // birth place data
-        response = response.replaceAll("\\$municipalityId", upiPerson.municipalityId);
-        response = response.replaceAll("\\$municipalityName", upiPerson.municipalityName);
-        response = response.replaceAll("\\$cantonAbbreviation", upiPerson.cantonAbbreviation);
-        response = response.replaceAll("\\$historyMunicipalityId", upiPerson.historyMunicipalityId);
-
-        // mothers name
-        response = response.replaceAll("\\$mothersFirstName", upiPerson.mothersFirstName);
-        response = response.replaceAll("\\$mothersOfficialName", upiPerson.mothersOfficialName);
-
-        // fathers name
-        response = response.replaceAll("\\$fathersFirstName", upiPerson.fathersFirstName);
-        response = response.replaceAll("\\$fathersOfficialName", upiPerson.fathersOfficialName);
-
-        // nationality data
-        response = response.replaceAll("\\$countryId", upiPerson.countryId);
-        response = response.replaceAll("\\$countryCode", upiPerson.countryIdISO2);
-        response = response.replaceAll("\\$countryName", upiPerson.countryNameShort);
-
-        return response;
+        return addResponseData(response, requestInfo, upiPerson);
     }
 
     /**
@@ -275,5 +208,47 @@ public class RequestHandler_SpidQueryService2 {
 
         throw new Exception("Could not find person with spid "+spid+ " in test data!");
     }
+
+    private String addResponseData(String response, RequestInfo requestInfo, UpiPerson upiPerson){
+
+        response = response.replaceAll("\\$recipientId", requestInfo.senderId);
+        response = response.replaceAll("\\$messageId", UUID.randomUUID().toString());
+        response = response.replaceAll("\\$referenceMessageId", requestInfo.referenceMessageId);
+
+        response = response.replaceAll("\\$echoSpid", requestInfo.spid);
+        response = response.replaceAll("\\$echoVn", requestInfo.vn);
+
+        response = response.replaceAll("\\$upiVn", upiPerson.vn);
+        response = response.replaceAll("\\$upiSpid", upiPerson.spid);
+
+        // person data
+        response = response.replaceAll("\\$firstName", upiPerson.firstName);
+        response = response.replaceAll("\\$officialName", upiPerson.officialName);
+        response = response.replaceAll("\\$sex", upiPerson.sex);
+        response = response.replaceAll("\\$dateOfBirth", upiPerson.birthDate);
+
+        // birth place data
+        response = response.replaceAll("\\$municipalityId", upiPerson.municipalityId);
+        response = response.replaceAll("\\$municipalityName", upiPerson.municipalityName);
+        response = response.replaceAll("\\$cantonAbbreviation", upiPerson.cantonAbbreviation);
+        response = response.replaceAll("\\$historyMunicipalityId", upiPerson.historyMunicipalityId);
+
+        // mothers name
+        response = response.replaceAll("\\$mothersFirstName", upiPerson.mothersFirstName);
+        response = response.replaceAll("\\$mothersOfficialName", upiPerson.mothersOfficialName);
+
+        // fathers name
+        response = response.replaceAll("\\$fathersFirstName", upiPerson.fathersFirstName);
+        response = response.replaceAll("\\$fathersOfficialName", upiPerson.fathersOfficialName);
+
+        // nationality data
+        response = response.replaceAll("\\$countryId", upiPerson.countryId);
+        response = response.replaceAll("\\$countryCode", upiPerson.countryIdISO2);
+        response = response.replaceAll("\\$countryName", upiPerson.countryNameShort);
+
+        return response;
+    }
+
+
 
 }
