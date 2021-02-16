@@ -1,18 +1,20 @@
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.ech.ch/xmlns/eCH-0214/2" xmlns:ns1="http://www.ech.ch/xmlns/eCH-0058/5" xmlns:ns2="http://www.ech.ch/xmlns/eCH-0213-commons/1" xmlns:ns3="http://www.ech.ch/xmlns/eCH-0044/4" xmlns:ns4="http://www.ech.ch/xmlns/eCH-0011/8" xmlns:ns5="http://www.ech.ch/xmlns/eCH-0007/5" xmlns:ns6="http://www.ech.ch/xmlns/eCH-0008/3" xmlns:ns7="http://www.ech.ch/xmlns/eCH-0021/7">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ns="http://www.ech.ch/xmlns/eCH-0214/2"
+                  xmlns:ns1="http://www.ech.ch/xmlns/eCH-0058/5">
    <soapenv:Header/>
    <soapenv:Body>
       <ns:request minorVersion="0">
          <ns:header>
-            <ns1:senderId>sedex://T4-408622-2</ns1:senderId><!--Sedex Client id --> 
+            <ns1:senderId>sedex://T4-408622-2</ns1:senderId><!--Sedex Client id -->
             <ns1:recipientId>sedex://T3-CH-24</ns1:recipientId>
-            <ns1:messageId>${=java.util.UUID.randomUUID().toString().replace("-", "")}</ns1:messageId>
+            <ns1:messageId>3fa45e307b7c4b2fa6180c21d21c7dcf</ns1:messageId>
             <ns1:messageType>1021</ns1:messageType>
             <ns1:sendingApplication>
                <ns1:manufacturer>ITH icoserve</ns1:manufacturer>
                <ns1:product>eHealth Solutions</ns1:product>
                <ns1:productVersion>VA36C</ns1:productVersion>
             </ns1:sendingApplication>
-            <ns1:messageDate>${=  java.time.OffsetDateTime.now().toString() }</ns1:messageDate>
+            <ns1:messageDate>2019-12-31T08:22:39.411+01:00</ns1:messageDate>
             <ns1:action>5</ns1:action> <!-- 5 = Request -->
             <ns1:testDeliveryFlag>true</ns1:testDeliveryFlag>
             <ns1:responseExpected>true</ns1:responseExpected>

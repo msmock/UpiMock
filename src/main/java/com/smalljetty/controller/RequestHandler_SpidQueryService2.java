@@ -32,7 +32,6 @@ import java.util.UUID;
 @Path("services/SpidQueryService2/")
 public class RequestHandler_SpidQueryService2 {
 
-    //todo: refactor handling request1/request2
     @POST
     @Consumes(MediaType.TEXT_XML)
     @Produces(MediaType.TEXT_XML)
@@ -41,7 +40,7 @@ public class RequestHandler_SpidQueryService2 {
         String responseString;
         RequestInfo requestInfo = getRequestInfo(requestBody);
 
-        if (requestInfo.getRequestType() == RequestType.REQUEST_TYPE1)
+        if (requestInfo.requestType == RequestType.REQUEST_TYPE1)
             responseString = getType1Response(requestInfo);
          else
             responseString = getType2Response(requestInfo);
@@ -59,20 +58,22 @@ public class RequestHandler_SpidQueryService2 {
         XPathFactory xPathFactory = XPathFactory.newInstance();
         XPath xPath = xPathFactory.newXPath();
 
-        String senderId = xPath.evaluate("/Envelope/Body/request/header/senderId", document);
-        String messageDate = xPath.evaluate("/Envelope/Body/request/header/messageDate", document);
         String vn = xPath.evaluate("/Envelope/Body/request/content/getInfoPersonRequest/pid/vn", document);
         String spid = xPath.evaluate("/Envelope/Body/request/content/getInfoPersonRequest/pid/SPID", document);
-
-        String messageId = xPath.evaluate("/Envelope/Body/request/header/messageId", document);
-        String soapMessageId = xPath.evaluate("/Envelope/Header/MessageID", document);
 
         if (vn.isEmpty())
             vn = getVnFromSpid(spid);
 
-        RequestType requestType = getRequestType(document);
-        return new RequestInfo(senderId, vn, messageDate, messageId, soapMessageId, requestType, spid);
+        RequestInfo requestInfo = new RequestInfo();
+        requestInfo.vn = vn;
+        requestInfo.spid = spid;
+        requestInfo.senderId = xPath.evaluate("/Envelope/Body/request/header/senderId", document);
+        requestInfo.messageDate = xPath.evaluate("/Envelope/Body/request/header/messageDate", document);
+        requestInfo.referenceMessageId = xPath.evaluate("/Envelope/Body/request/header/messageId", document);
+        requestInfo.soapMessageId = xPath.evaluate("/Envelope/Header/MessageID", document);
+        requestInfo.requestType = getRequestType(document);
 
+        return requestInfo;
     }
 
     /**
@@ -168,8 +169,6 @@ public class RequestHandler_SpidQueryService2 {
      */
     private String getType1Response(RequestInfo requestInfo) throws ParserConfigurationException, IOException, SAXException, TransformerException, XPathExpressionException {
 
-        // TODO: read as string and use replaceAll with regular expression
-
         DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         Document document = db.parse(Config.envPefix + "/com/smalljetty/app/SpidQuery_response-type-1.xml");
 
@@ -182,12 +181,12 @@ public class RequestHandler_SpidQueryService2 {
 
         String response = writer.getBuffer().toString().replaceAll("\n|\r", "");
 
-        response = response.replaceAll("\\$recipientId", requestInfo.getSenderId());
+        response = response.replaceAll("\\$recipientId", requestInfo.senderId);
         response = response.replaceAll("\\$messageId", UUID.randomUUID().toString());
-        response = response.replaceAll("\\$referenceMessageId", requestInfo.getReferenceMessageId());
-        response = response.replaceAll("\\$echoVn", requestInfo.getVn());
+        response = response.replaceAll("\\$referenceMessageId", requestInfo.referenceMessageId);
+        response = response.replaceAll("\\$echoVn", requestInfo.vn);
 
-        UpiPerson upiPerson = getUpiPerson(requestInfo.getVn());
+        UpiPerson upiPerson = getUpiPerson(requestInfo.vn);
 
         response = response.replaceAll("\\$upiVn", upiPerson.vn);
         response = response.replaceAll("\\$upiSpid", upiPerson.spid);
@@ -204,11 +203,11 @@ public class RequestHandler_SpidQueryService2 {
         response = response.replaceAll("\\$cantonAbbreviation", upiPerson.cantonAbbreviation);
         response = response.replaceAll("\\$historyMunicipalityId", upiPerson.historyMunicipalityId);
 
-        // TODO mothers name
+        // mothers name
         response = response.replaceAll("\\$mothersFirstName", upiPerson.mothersFirstName);
         response = response.replaceAll("\\$mothersOfficialName", upiPerson.mothersOfficialName);
 
-        // TODO fathers name
+        // fathers name
         response = response.replaceAll("\\$fathersFirstName", upiPerson.fathersFirstName);
         response = response.replaceAll("\\$fathersOfficialName", upiPerson.fathersOfficialName);
 
@@ -216,7 +215,6 @@ public class RequestHandler_SpidQueryService2 {
         response = response.replaceAll("\\$countryId", upiPerson.countryId);
         response = response.replaceAll("\\$countryCode", upiPerson.countryIdISO2);
         response = response.replaceAll("\\$countryName", upiPerson.countryNameShort);
-
 
         return response;
     }
@@ -238,16 +236,16 @@ public class RequestHandler_SpidQueryService2 {
 
         String response = writer.getBuffer().toString().replaceAll("\n|\r", "");
 
-        response = response.replaceAll("sedex://T4-321574-2", requestInfo.getSenderId());
-        response = response.replaceAll("7560520333642", requestInfo.getVn());
-        response = response.replaceAll("559f64d63aee4c4ead5e501901b5729f", requestInfo.getReferenceMessageId());
+        response = response.replaceAll("sedex://T4-321574-2", requestInfo.senderId);
+        response = response.replaceAll("7560520333642", requestInfo.vn);
+        response = response.replaceAll("559f64d63aee4c4ead5e501901b5729f", requestInfo.referenceMessageId);
         response = response.replaceAll("399aeed2-6094-45db-aece-fa5256861fa8", UUID.randomUUID().toString());
 
         response = replaceXmlValue(response, "//Envelope/Body/response/header/messageDate/text()", OffsetDateTime.now().toString());
-        response = replaceXmlValue(response, "//Envelope/Body/response/header/messageDate/text()", requestInfo.getMessageDate());
-        response = replaceXmlValue(response, "//Envelope/Header/RelatesTo/text()", requestInfo.getSoapMessageId());
+        response = replaceXmlValue(response, "//Envelope/Body/response/header/messageDate/text()", requestInfo.messageDate);
+        response = replaceXmlValue(response, "//Envelope/Header/RelatesTo/text()", requestInfo.soapMessageId);
 
-        UpiPerson upiPerson = getUpiPerson(requestInfo.getVn());
+        UpiPerson upiPerson = getUpiPerson(requestInfo.vn);
 
         response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/firstName/text()", upiPerson.firstName);
         response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/officialName/text()", upiPerson.officialName);

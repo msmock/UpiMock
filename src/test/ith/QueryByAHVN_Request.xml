@@ -1,4 +1,6 @@
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.ech.ch/xmlns/eCH-0214/2" xmlns:ns1="http://www.ech.ch/xmlns/eCH-0058/5" xmlns:ns2="http://www.ech.ch/xmlns/eCH-0213-commons/1" xmlns:ns3="http://www.ech.ch/xmlns/eCH-0044/4" xmlns:ns4="http://www.ech.ch/xmlns/eCH-0011/8" xmlns:ns5="http://www.ech.ch/xmlns/eCH-0007/5" xmlns:ns6="http://www.ech.ch/xmlns/eCH-0008/3" xmlns:ns7="http://www.ech.ch/xmlns/eCH-0021/7">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ns="http://www.ech.ch/xmlns/eCH-0214/2"
+                  xmlns:ns1="http://www.ech.ch/xmlns/eCH-0058/5">
    <soapenv:Header/>
    <soapenv:Body>
       <ns:request minorVersion="0">
