@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2db2d464-52c9-40d3-89f0-d95a6b758204" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560410438401.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,11 +183,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/upimock/controller/RequestHandler_SpidManagementService.java</url>
           <line>73</line>
           <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java</url>
-          <line>216</line>
-          <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
