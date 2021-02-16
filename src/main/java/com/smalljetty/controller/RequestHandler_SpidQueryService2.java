@@ -5,7 +5,6 @@ import com.smalljetty.model.RequestInfo;
 import com.smalljetty.model.RequestType;
 import com.smalljetty.model.UpiPerson;
 import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -26,7 +25,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Path("services/SpidQueryService2/")
@@ -114,23 +112,23 @@ public class RequestHandler_SpidQueryService2 {
         upiPerson.birthDate = xPath.evaluate("/upiPerson/yearMonthDay", document);
 
         // birth place data
-        upiPerson.municipalityId = xPath.evaluate("/upiPerson/municipalityId", document);
-        upiPerson.municipalityName = xPath.evaluate("/upiPerson/municipalityName", document);
-        upiPerson.cantonAbbreviation = xPath.evaluate("/upiPerson/cantonAbbreviation", document);
-        upiPerson.historyMunicipalityId = xPath.evaluate("/upiPerson/historyMunicipalityId", document);
+        upiPerson.setMunicipalityId(xPath.evaluate("/upiPerson/municipalityId", document));
+        upiPerson.setMunicipalityName(xPath.evaluate("/upiPerson/municipalityName", document));
+        upiPerson.setCantonAbbreviation(xPath.evaluate("/upiPerson/cantonAbbreviation", document));
+        upiPerson.setHistoryMunicipalityId(xPath.evaluate("/upiPerson/historyMunicipalityId", document));
 
         // mothers name
-        upiPerson.mothersFirstName= xPath.evaluate("/upiPerson/mothersFirstName", document);
-        upiPerson.mothersOfficialName = xPath.evaluate("/upiPerson/mothersOfficialName", document);
+        upiPerson.setMothersFirstName(xPath.evaluate("/upiPerson/mothersFirstName", document));
+        upiPerson.setMothersOfficialName(xPath.evaluate("/upiPerson/mothersOfficialName", document));
 
         // fathers name
-        upiPerson.fathersFirstName = xPath.evaluate("/upiPerson/fathersFirstName", document);
-        upiPerson.fathersOfficialName = xPath.evaluate("/upiPerson/fathersOfficialName", document);
+        upiPerson.setFathersFirstName(xPath.evaluate("/upiPerson/fathersFirstName", document));
+        upiPerson.setFathersOfficialName(xPath.evaluate("/upiPerson/fathersOfficialName", document));
 
         // nationalityData
-        upiPerson.countryId = xPath.evaluate("/upiPerson/countryId", document);
-        upiPerson.countryIdISO2 = xPath.evaluate("/upiPerson/countryIdISO2", document);
-        upiPerson.countryNameShort = xPath.evaluate("/upiPerson/countryNameShort", document);
+        upiPerson.setCountryId(xPath.evaluate("/upiPerson/countryId", document));
+        upiPerson.setCountryIdISO2(xPath.evaluate("/upiPerson/countryIdISO2", document));
+        upiPerson.setCountryNameShort(xPath.evaluate("/upiPerson/countryNameShort", document));
 
         return upiPerson;
     }
@@ -209,6 +207,7 @@ public class RequestHandler_SpidQueryService2 {
         throw new Exception("Could not find person with spid "+spid+ " in test data!");
     }
 
+
     private String addResponseData(String response, RequestInfo requestInfo, UpiPerson upiPerson){
 
         response = response.replaceAll("\\$recipientId", requestInfo.senderId);
@@ -248,7 +247,5 @@ public class RequestHandler_SpidQueryService2 {
 
         return response;
     }
-
-
 
 }
