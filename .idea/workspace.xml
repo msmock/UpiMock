@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2db2d464-52c9-40d3-89f0-d95a6b758204" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560410438402.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/ith/QueryByAHVN_Response_zas.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/SpidQuery_response-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/SpidQuery_response-type-1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/SpidQuery_response-2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/SpidQuery_response-type-2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/SpidQuery_response-type-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/SpidQuery_response-type-1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidManagementService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/ith/QueryByAHVN_Response.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ith/QueryByAHVN_Response_mock.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/model/UpiPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/model/UpiPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560410438402.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560410438402.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/ith/QueryByAHVN_Request.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ith/QueryByAHVN_Request.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,15 +61,13 @@
     </key>
   </component>
   <component name="RunManager" selected="JAR Application.UpiMock">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -170,7 +168,8 @@
       <workItem from="1613203096477" duration="142000" />
       <workItem from="1613203269132" duration="1111000" />
       <workItem from="1613384063981" duration="658000" />
-      <workItem from="1613400558676" duration="2081000" />
+      <workItem from="1613400558676" duration="2901000" />
+      <workItem from="1613405533274" duration="7080000" />
     </task>
     <servers />
   </component>
@@ -184,21 +183,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/upimock/controller/RequestHandler_SpidManagementService.java</url>
           <line>73</line>
           <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java</url>
-          <line>189</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java</url>
-          <line>150</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java</url>
-          <line>237</line>
-          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

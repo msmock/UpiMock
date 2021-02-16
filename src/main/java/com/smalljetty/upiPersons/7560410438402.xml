@@ -1,11 +1,30 @@
 <upiPerson>
     <vn>7560410438402</vn>
+    <SPID>756196212041800018</SPID>
+
+    <!-- person data -->
     <firstName>Niklaus Darius Lukas</firstName>
     <officialName>FOLETTI YOON</officialName>
     <sex>1</sex>
     <yearMonthDay>1998-12-21</yearMonthDay>
+
+    <!-- birth place data -->
+    <municipalityId>198</municipalityId>
+    <municipalityName>Uster</municipalityName>
+    <cantonAbbreviation>ZH</cantonAbbreviation>
+    <historyMunicipalityId>10940</historyMunicipalityId>
+
+    <!-- mothers name -->
+    <mothersFirstName>Barbara Ursula Annerose</mothersFirstName>
+    <mothersOfficialName>Bause</mothersOfficialName>
+
+    <!-- fathers name -->
+    <fathersFirstName>Roland Henri Auguste</fathersFirstName>
+    <fathersOfficialName>Ekiru</fathersOfficialName>
+
+    <!-- nationality data -->
     <countryId>8100</countryId>
     <countryIdISO2>CH</countryIdISO2>
     <countryNameShort>SWITZERLAND</countryNameShort>
-    <SPID>756196212041800018</SPID>
+
 </upiPerson>

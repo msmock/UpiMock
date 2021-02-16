@@ -3,39 +3,32 @@ package com.smalljetty.model;
 public class UpiPerson {
 
     public String vn;
+    public String spid;
+
+    // person data
     public String firstName;
     public String officialName;
     public String sex;
-    public String yearMonthDay;
-    public String countryId;
-    public String countryIdISO2;
-    public String countryNameShort;
-    public String spid;
+    public String birthDate;
 
-    public UpiPerson(String vn, String firstName, String officialName, String sex, String yearMonthDay, String countryId, String countryIdISO2, String countryNameShort, String spid) {
-        this.vn = vn;
-        this.firstName = firstName;
-        this.officialName = officialName;
-        this.sex = sex;
-        this.yearMonthDay = yearMonthDay;
-        this.countryId = countryId;
-        this.countryIdISO2 = countryIdISO2;
-        this.countryNameShort = countryNameShort;
-        this.spid = spid;
-    }
+    // nationality data
+    public String countryId = "8100";
+    public String countryIdISO2 = "CH";
+    public String countryNameShort = "SWITZERLAND";
 
-    @Override
-    public String toString() {
-        return "UpiPerson{" +
-                "vn='" + vn + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", officialName='" + officialName + '\'' +
-                ", sex='" + sex + '\'' +
-                ", yearMonthDay='" + yearMonthDay + '\'' +
-                ", countryId='" + countryId + '\'' +
-                ", countryIdISO2='" + countryIdISO2 + '\'' +
-                ", countryNameShort='" + countryNameShort + '\'' +
-                ", spid='" + spid + '\'' +
-                '}';
-    }
+    // mothers name
+    public String mothersFirstName = "Sabine";
+    public String mothersOfficialName = "Moser";
+
+    // fathers name
+    public String fathersFirstName = "Reto";
+    public String fathersOfficialName = "Moser";
+
+    // birth place data
+    public String municipalityId = "198";
+    public String municipalityName = "Uster";
+    public String cantonAbbreviation = "ZH";
+    public String historyMunicipalityId = "10940";
+
+    public UpiPerson(){ };
 }

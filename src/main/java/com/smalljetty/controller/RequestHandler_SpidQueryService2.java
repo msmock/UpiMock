@@ -130,23 +130,45 @@ public class RequestHandler_SpidQueryService2 {
 
         XPath xPath = XPathFactory.newInstance().newXPath();
 
-        String firstName = xPath.evaluate("/upiPerson/firstName", document);
-        String officialName = xPath.evaluate("/upiPerson/officialName", document);
-        String sex = xPath.evaluate("/upiPerson/sex", document);
-        String yearMonthDay = xPath.evaluate("/upiPerson/yearMonthDay", document);
-        String countryId = xPath.evaluate("/upiPerson/countryId", document);
-        String countryIdISO2 = xPath.evaluate("/upiPerson/countryIdISO2", document);
-        String countryNameShort = xPath.evaluate("/upiPerson/countryNameShort", document);
-        String spid = xPath.evaluate("/upiPerson/SPID", document);
+        UpiPerson upiPerson = new UpiPerson();
 
-        return new UpiPerson(vn, firstName, officialName, sex, yearMonthDay, countryId,
-                countryIdISO2, countryNameShort, spid);
+        upiPerson.vn = vn;
+        upiPerson.spid = xPath.evaluate("/upiPerson/SPID", document);
+
+        // person data
+        upiPerson.firstName = xPath.evaluate("/upiPerson/firstName", document);
+        upiPerson.officialName = xPath.evaluate("/upiPerson/officialName", document);
+        upiPerson.sex = xPath.evaluate("/upiPerson/sex", document);
+        upiPerson.birthDate = xPath.evaluate("/upiPerson/yearMonthDay", document);
+
+        // birth place data
+        upiPerson.municipalityId = xPath.evaluate("/upiPerson/municipalityId", document);
+        upiPerson.municipalityName = xPath.evaluate("/upiPerson/municipalityName", document);
+        upiPerson.cantonAbbreviation = xPath.evaluate("/upiPerson/cantonAbbreviation", document);
+        upiPerson.historyMunicipalityId = xPath.evaluate("/upiPerson/historyMunicipalityId", document);
+
+        // mothers name
+        upiPerson.mothersFirstName= xPath.evaluate("/upiPerson/mothersFirstName", document);
+        upiPerson.mothersOfficialName = xPath.evaluate("/upiPerson/mothersOfficialName", document);
+
+        // fathers name
+        upiPerson.fathersFirstName = xPath.evaluate("/upiPerson/fathersFirstName", document);
+        upiPerson.fathersOfficialName = xPath.evaluate("/upiPerson/fathersOfficialName", document);
+
+        // nationalityData
+        upiPerson.countryId = xPath.evaluate("/upiPerson/countryId", document);
+        upiPerson.countryIdISO2 = xPath.evaluate("/upiPerson/countryIdISO2", document);
+        upiPerson.countryNameShort = xPath.evaluate("/upiPerson/countryNameShort", document);
+
+        return upiPerson;
     }
 
     /**
      * REQUEST_TYPE1 if the request is with the VN
      */
     private String getType1Response(RequestInfo requestInfo) throws ParserConfigurationException, IOException, SAXException, TransformerException, XPathExpressionException {
+
+        // TODO: read as string and use replaceAll with regular expression
 
         DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         Document document = db.parse(Config.envPefix + "/com/smalljetty/app/SpidQuery_response-type-1.xml");
@@ -160,24 +182,41 @@ public class RequestHandler_SpidQueryService2 {
 
         String response = writer.getBuffer().toString().replaceAll("\n|\r", "");
 
-        response = response.replaceAll("sedex://T4-130114-5", requestInfo.getSenderId());
-        response = response.replaceAll("7560520268326", requestInfo.getVn());
-        response = response.replaceAll("3fa45e307b7c4b2fa6180c21d21c7dcf", requestInfo.getReferenceMessageId());
-        response = response.replaceAll("f89b611c-adde-44eb-8418-077c0b4b1939", UUID.randomUUID().toString());
-
-        response = replaceXmlValue(response, "//Envelope/Body/response/header/messageDate/text()", OffsetDateTime.now().toString());
-        response = replaceXmlValue(response, "//Envelope/Body/response/header/messageDate/text()", requestInfo.getMessageDate());
-        response = replaceXmlValue(response, "//Envelope/Header/RelatesTo/text()", requestInfo.getSoapMessageId());
+        response = response.replaceAll("\\$recipientId", requestInfo.getSenderId());
+        response = response.replaceAll("\\$messageId", UUID.randomUUID().toString());
+        response = response.replaceAll("\\$referenceMessageId", requestInfo.getReferenceMessageId());
+        response = response.replaceAll("\\$echoVn", requestInfo.getVn());
 
         UpiPerson upiPerson = getUpiPerson(requestInfo.getVn());
 
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/firstName/text()", upiPerson.firstName);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/officialName/text()", upiPerson.officialName);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/sex/text()", upiPerson.sex);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/dateOfBirth/yearMonthDay/text()", upiPerson.yearMonthDay);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/nationalityData/countryInfo/country/countryId/text()", upiPerson.countryId);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/nationalityData/countryInfo/country/countryIdISO2/text()", upiPerson.countryIdISO2);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/nationalityData/countryInfo/country/countryNameShort/text()", upiPerson.countryNameShort);
+        response = response.replaceAll("\\$upiVn", upiPerson.vn);
+        response = response.replaceAll("\\$upiSpid", upiPerson.spid);
+
+        // person data
+        response = response.replaceAll("\\$firstName", upiPerson.firstName);
+        response = response.replaceAll("\\$officialName", upiPerson.officialName);
+        response = response.replaceAll("\\$sex", upiPerson.sex);
+        response = response.replaceAll("\\$dateOfBirth", upiPerson.birthDate);
+
+        // birth place data
+        response = response.replaceAll("\\$municipalityId", upiPerson.municipalityId);
+        response = response.replaceAll("\\$municipalityName", upiPerson.municipalityName);
+        response = response.replaceAll("\\$cantonAbbreviation", upiPerson.cantonAbbreviation);
+        response = response.replaceAll("\\$historyMunicipalityId", upiPerson.historyMunicipalityId);
+
+        // TODO mothers name
+        response = response.replaceAll("\\$mothersFirstName", upiPerson.mothersFirstName);
+        response = response.replaceAll("\\$mothersOfficialName", upiPerson.mothersOfficialName);
+
+        // TODO fathers name
+        response = response.replaceAll("\\$fathersFirstName", upiPerson.fathersFirstName);
+        response = response.replaceAll("\\$fathersOfficialName", upiPerson.fathersOfficialName);
+
+        // nationality data
+        response = response.replaceAll("\\$countryId", upiPerson.countryId);
+        response = response.replaceAll("\\$countryCode", upiPerson.countryIdISO2);
+        response = response.replaceAll("\\$countryName", upiPerson.countryNameShort);
+
 
         return response;
     }
@@ -213,7 +252,7 @@ public class RequestHandler_SpidQueryService2 {
         response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/firstName/text()", upiPerson.firstName);
         response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/officialName/text()", upiPerson.officialName);
         response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/sex/text()", upiPerson.sex);
-        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/dateOfBirth/yearMonthDay/text()", upiPerson.yearMonthDay);
+        response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/dateOfBirth/yearMonthDay/text()", upiPerson.birthDate);
         response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/nationalityData/countryInfo/country/countryId/text()", upiPerson.countryId);
         response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/nationalityData/countryInfo/country/countryIdISO2/text()", upiPerson.countryIdISO2);
         response = replaceXmlValue(response, "//Envelope/Body/response/positiveResponse/getInfoPersonResponse/personFromUPI/nationalityData/countryInfo/country/countryNameShort/text()", upiPerson.countryNameShort);

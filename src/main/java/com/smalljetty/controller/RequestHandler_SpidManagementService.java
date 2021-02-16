@@ -88,7 +88,7 @@ public class RequestHandler_SpidManagementService {
         response.getPositiveResponse().getPersonFromUPI().setFirstName(upiPerson.firstName);
         response.getPositiveResponse().getPersonFromUPI().setOfficialName(upiPerson.officialName);
         response.getPositiveResponse().getPersonFromUPI().setSex(upiPerson.sex);
-        XMLGregorianCalendar bdayCal = getXmlGregorianCalendar(new SimpleDateFormat("yyyy-MM-dd").parse(upiPerson.yearMonthDay));
+        XMLGregorianCalendar bdayCal = getXmlGregorianCalendar(new SimpleDateFormat("yyyy-MM-dd").parse(upiPerson.birthDate));
         response.getPositiveResponse().getPersonFromUPI().getDateOfBirth().setYearMonthDay(bdayCal);
         response.getPositiveResponse().getPersonFromUPI().getNationalityData().getCountryInfo().get(0).getCountry().setCountryId(Integer.parseInt(upiPerson.countryId));
         response.getPositiveResponse().getPersonFromUPI().getNationalityData().getCountryInfo().get(0).getCountry().setCountryIdISO2(upiPerson.countryIdISO2);
@@ -113,17 +113,23 @@ public class RequestHandler_SpidManagementService {
         Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(Config.envPefix + "com/smalljetty/upiPersons/" + vn + ".xml");
         XPath xPath = XPathFactory.newInstance().newXPath();
 
-        String firstName = xPath.evaluate("/upiPerson/firstName", document);
-        String officialName = xPath.evaluate("/upiPerson/officialName", document);
-        String sex = xPath.evaluate("/upiPerson/sex", document);
-        String yearMonthDay = xPath.evaluate("/upiPerson/yearMonthDay", document);
-        String countryId = xPath.evaluate("/upiPerson/countryId", document);
-        String countryIdISO2 = xPath.evaluate("/upiPerson/countryIdISO2", document);
-        String countryNameShort = xPath.evaluate("/upiPerson/countryNameShort", document);
-        String spid = xPath.evaluate("/upiPerson/SPID", document);
+        UpiPerson upiPerson = new UpiPerson();
 
-        return new UpiPerson(vn, firstName, officialName, sex, yearMonthDay, countryId,
-                countryIdISO2, countryNameShort, spid);
+        upiPerson.vn = vn;
+        upiPerson.spid = xPath.evaluate("/upiPerson/SPID", document);
+
+        // person data
+        upiPerson.firstName = xPath.evaluate("/upiPerson/firstName", document);
+        upiPerson.officialName = xPath.evaluate("/upiPerson/officialName", document);
+        upiPerson.sex = xPath.evaluate("/upiPerson/sex", document);
+        upiPerson.birthDate = xPath.evaluate("/upiPerson/yearMonthDay", document);
+
+        // nationality data
+        upiPerson.countryId = xPath.evaluate("/upiPerson/countryId", document);
+        upiPerson.countryIdISO2 = xPath.evaluate("/upiPerson/countryIdISO2", document);
+        upiPerson.countryNameShort = xPath.evaluate("/upiPerson/countryNameShort", document);
+
+        return upiPerson;
     }
 
 }
