@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2db2d464-52c9-40d3-89f0-d95a6b758204" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/xmlcheck/ListPersons.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/xmlcheck/patients.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/model/UpiPerson.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +179,7 @@
       <workItem from="1613384063981" duration="658000" />
       <workItem from="1613400558676" duration="2901000" />
       <workItem from="1613405533274" duration="11102000" />
-      <workItem from="1613491638261" duration="4477000" />
+      <workItem from="1613491638261" duration="4742000" />
     </task>
     <servers />
   </component>
