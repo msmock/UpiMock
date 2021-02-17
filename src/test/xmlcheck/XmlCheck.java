@@ -19,7 +19,7 @@ public class XmlCheck {
 
     public static void main(String[] args) throws Exception {
 
-        File dir = new File(envPefix + "com/smalljetty/upiPersons");
+        File dir = new File(envPefix + "data");
         File[] directoryListing = dir.listFiles();
 
         if (directoryListing == null)

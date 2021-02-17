@@ -2,7 +2,6 @@ package com.smalljetty.controller;
 
 import ch.ech.xmlns.ech_0213._1.Request;
 import ch.ech.xmlns.ech_0213_commons._1.PidsFromUPIType;
-import com.smalljetty.model.Config;
 import com.smalljetty.model.UpiPerson;
 import org.w3c.dom.Document;
 
@@ -57,7 +56,7 @@ public class RequestHandler_SpidManagementService {
 
         //Create Response Object from XML File
         StringBuilder sb = new StringBuilder();
-        Files.lines(Paths.get(Config.envPefix + "com/smalljetty/app/SpidMgmt_response-1.xml"), StandardCharsets.UTF_8).forEach(line -> sb.append(line + System.getProperty("line.separator")));
+        Files.lines(Paths.get( "template/SpidMgmt_response-1.xml"), StandardCharsets.UTF_8).forEach(line -> sb.append(line + System.getProperty("line.separator")));
         String responseStr = sb.toString();
 
         String responseHead = responseStr.substring(0, responseStr.indexOf(":response") - 5);
@@ -110,7 +109,7 @@ public class RequestHandler_SpidManagementService {
 
     private UpiPerson getUpiPerson(String vn) throws Exception {
 
-        Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(Config.envPefix + "com/smalljetty/upiPersons/" + vn + ".xml");
+        Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse("data/" + vn + ".xml");
         XPath xPath = XPathFactory.newInstance().newXPath();
 
         UpiPerson upiPerson = new UpiPerson();

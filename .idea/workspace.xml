@@ -6,6 +6,116 @@
   <component name="ChangeListManager">
     <list default="true" id="2db2d464-52c9-40d3-89f0-d95a6b758204" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/Soap_error.xml" beforeDir="false" afterPath="$PROJECT_DIR$/template/Soap_error.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/SpidMgmt_response-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/template/SpidMgmt_response-1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/SpidQuery_response-type-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/template/SpidQuery_response-type-1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/app/SpidQuery_response-type-2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/template/SpidQuery_response-type-2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/smalljetty/controller/RequestHandler_SpidQueryService2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/model/Config.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560410438401.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560410438401.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560410438402.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560410438402.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520067196.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520067196.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520075337.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520075337.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520103184.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520103184.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520126190.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520126190.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520141247.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520141247.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520146310.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520146310.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520196179.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520196179.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520220997.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520220997.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520268300.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520268300.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520268301.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520268301.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520268326.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520268326.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520298477.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520298477.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520333642.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520333642.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520358416.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520358416.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520379213.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520379213.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520398368.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520398368.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520430396.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520430396.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520443457.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520443457.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520460737.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520460737.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520473942.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520473942.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520482340.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520482340.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520619845.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520619845.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520625242.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520625242.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520635074.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520635074.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520647015.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520647015.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520796065.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520796065.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520856295.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520856295.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520865488.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520865488.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520875234.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520875234.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520917835.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520917835.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560520940215.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560520940215.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521023122.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521023122.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521053204.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521053204.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521062169.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521062169.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521094061.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521094061.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521104449.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521104449.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521122931.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521122931.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521127080.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521127080.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521136358.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521136358.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521199483.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521199483.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521207591.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521207591.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521219419.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521219419.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521253864.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521253864.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521278577.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521278577.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521282710.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521282710.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521312646.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521312646.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521313018.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521313018.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521371988.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521371988.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521418034.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521418034.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521421263.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521421263.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521590877.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521590877.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521591706.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521591706.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521625593.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521625593.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521689878.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521689878.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521818759.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521818759.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521832960.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521832960.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521894654.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521894654.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521931311.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521931311.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521967648.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521967648.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521988216.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521988216.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560521997959.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560521997959.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560522232288.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560522232288.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560522287387.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560522287387.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560522416862.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560522416862.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560522577600.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560522577600.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560522620047.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560522620047.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560522697322.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560522697322.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560522778281.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560522778281.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560522792812.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560522792812.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560522816990.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560522816990.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560522826074.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560522826074.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560522940053.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560522940053.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523021843.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523021843.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523059419.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523059419.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523134352.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523134352.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523153179.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523153179.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523162140.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523162140.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523192772.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523192772.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523230788.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523230788.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523235226.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523235226.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523275819.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523275819.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523298054.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523298054.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523326870.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523326870.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523358697.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523358697.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523430041.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523430041.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523470276.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523470276.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523576565.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523576565.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523646244.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523646244.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523657486.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523657486.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523670942.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523670942.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523700991.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523700991.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523711492.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523711492.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523851402.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523851402.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523851778.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523851778.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523888149.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523888149.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523925080.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523925080.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523934679.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523934679.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/smalljetty/upiPersons/7560523935560.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/7560523935560.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/xmlcheck/ListPersons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/xmlcheck/ListPersons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/xmlcheck/XmlCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/xmlcheck/XmlCheck.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,22 +167,21 @@
       <recent name="$PROJECT_DIR$/src/test/ith" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/smalljetty/template" />
       <recent name="$PROJECT_DIR$/src/test/xmlcheck" />
       <recent name="$PROJECT_DIR$/src/main/java/com/smalljetty/model" />
       <recent name="$PROJECT_DIR$/src/test/ith" />
-      <recent name="$PROJECT_DIR$/src/test/SpidMgmt" />
     </key>
   </component>
   <component name="RunManager" selected="JAR Application.UpiMock">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -180,6 +289,7 @@
       <workItem from="1613400558676" duration="2901000" />
       <workItem from="1613405533274" duration="11102000" />
       <workItem from="1613491638261" duration="4742000" />
+      <workItem from="1613563506990" duration="1370000" />
     </task>
     <servers />
   </component>
